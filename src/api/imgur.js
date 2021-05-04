@@ -20,5 +20,22 @@ export default {
                 Authorization: `Bearer ${token}`
             }
         })
+    },
+    uploadImages(images, token) {
+        // loop over images to upload one at a time
+        // takes array like images to real array then call map function to iterate all images over file object
+        const promises = Array.from(images).map(image => {
+            //form data object from vanilla js
+            const formData = new FormData();
+            formData.append('image', image)
+
+            return axios.post(`${ROOT_URL}/3/image`, formData, {
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
+            })
+        })
+
+        return Promise.all(promises)
     }
 }
