@@ -1,24 +1,7 @@
-# vue-image-site
+# Imgur Vue and Upload
 
-## Project setup
-```
-npm install
-```
+## About
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+Project made with Vue and Vuex using Imgur API. View your uploads in one area and upload single or multiple files from the API! 
 
-### Compiles and minifies for production
-```
-npm run build
-```
 
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
