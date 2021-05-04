@@ -3,6 +3,8 @@ import VueRouter from "vue-router";
 import App from "./App";
 import store from "./store"
 import AuthHandler from "./components/AuthHandler"
+import ImageList from "./components/ImageList"
+import UploadForm from "./components/UploadForm"
 Vue.use(VueRouter);
 
 //different routes inside our application
@@ -10,10 +12,14 @@ Vue.use(VueRouter);
 // has unintended side effects with # access token etc, doesn't know how interpret
 
 //use browser router, only route after domain is considered update configuration file in vue router
-const router = new VueRouter({
+//allows us to programatically re route our users
+// exporting to use in auth to push
+export const router = new VueRouter({
     //history tells to use browser router :)
     mode: "history",
     routes: [
+        {path: "/", component: ImageList},
+        {path: "/upload", component: UploadForm},
         {path: '/oauth2/callback', component: AuthHandler }
     ]
 })
